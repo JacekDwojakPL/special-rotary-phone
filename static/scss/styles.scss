@@ -1,0 +1,79 @@
+// Variable Overrides
+
+// Bootstrap Sass Imports
+body {
+  color: white !important;
+}
+
+
+$body-bg: #120D08;
+$body-color: #111;
+$theme-colors: (
+  "primary": #F2E3CF
+);
+
+$font-family-sans-serif: "Raleway", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 9)
+), $spacers);
+
+$dropdown-bg:                       none;
+$dropdown-link-color:               #F2E3CF;
+$dropdown-link-hover-color:         black;
+$dropdown-link-hover-bg:            #F2E3CF;
+
+
+#hero {
+  background: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 60%;
+}
+
+.feature_wrapper {
+  color: #000;
+}
+.navbar {
+  width: 100%;
+  background: none !important;
+
+  @media (max-width:34em) {
+    background: black !important;
+  }
+
+  .navbar-toggler {
+    cursor: pointer;
+    outline: 0;
+  }
+
+  .nav-link {
+    text-transform: uppercase;
+  }
+
+  .nav-item {
+    padding: 0 1rem;
+
+    @media (max-width: 34em) {
+      padding: 0;
+    }
+  }
+
+  .nav-link {
+    @media (max-width: 34em) {
+      font-weight: normal;
+      color: white !important;
+    }
+  }
+}
+
+// Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap";
