@@ -16,19 +16,19 @@
       <div id="hero">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="#">Symphonic Backline</a>
+          <a class="navbar-brand" href="{{ url_for('index') }}">Symphonic Backline</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                      <a class="nav-link active" href="#">Start</a>
+                      <a class="nav-link active" href="#">Galeria</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle active" href="#" id="navbar_dropdown" data-toggle="dropdown">Katalog</a>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Kotly</a>
+                      <a class="dropdown-item" href="{{ url_for('product', name='timpani') }}">Kotly</a>
                       <a class="dropdown-item" href="#">Instrumenty sztabkowe</a>
                       <a class="dropdown-item" href="#">Werble</a>
                       <a class="dropdown-item" href="#">Bebny</a>
