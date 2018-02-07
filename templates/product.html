@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+<div class="product_wrapper bg-primary pt-5 pb-5 mt-5 mt-lg-0">
+  <div class="container text-center">
+    {% for product in products %}
+    <div class="product_div"><span class="product_button" data-toggle="modal" data-target="#myModal">Wiecej</span>
+      <div class="product_overlay">
+        <img src="{{ url_for('static', filename='img/asset.img')}}" class="product_thumbnail">
+      </div><
+    </div>
+
+    <!-- modal for each product -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{{ product.name }}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>{{ product.opis }}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of modal -->
+    {% endfor %}
+  </div>
+</div>
+{% endblock main %}
