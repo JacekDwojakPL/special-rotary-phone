@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, request, jsonify
 from flask_jsglue import JSGlue
 from flask_sqlalchemy import SQLAlchemy
+from helpers import row_to_dict
 
 basedir = os.path.dirname(__file__)
 database_dir = os.path.join(basedir, 'data2.sqlite')
@@ -38,10 +39,11 @@ def product(name):
 def description():
 
     instrument_type = request.args.get('instrument_type')
-    opis = Instrument_description.query.filter_by(instrument_type=instrument_type).first()
-    products = {'name': 'majestic 1', 'opis': 'dupa1'}
-    print(opis)
-    return jsonify(products)
+    query = Instrument_description.query.filter_by(instrument_type=instrument_type).first()
+    opis =  row_to_dict(query)
+
+    return jsonify(opis)
+
 
 
 class Instrument_description(db.Model):

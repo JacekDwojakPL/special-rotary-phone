@@ -6,6 +6,19 @@ $('.ajax-trigger').on('click', function (e) {
 
   $.getJSON(Flask.url_for("description"), parameters)
     .done(function(data, textStatus, jqXHR){
-      console.log(data['opis'])
+
+    $("#instrument_name").fadeOut(50, function() {
+
+      $("#instrument_name").html(data['name']);
+      $("#instrument_name").fadeIn();
+
     });
+
+    $("#instrument_description").fadeOut(50, function () {
+
+      $("#instrument_description").html(data['opis']);
+      $("#instrument_description").fadeIn();
+    });
+
+  });
 });

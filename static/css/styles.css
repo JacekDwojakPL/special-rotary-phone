@@ -68,6 +68,13 @@ body {
   background-size: cover;
   background-position: 0 60%; }
 
+#join-container {
+  background: url("../img/background2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 60%;
+}
+
 .icon-drum-1 {
   top: -10px; }
 
