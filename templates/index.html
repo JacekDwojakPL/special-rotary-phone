@@ -29,8 +29,8 @@
                     <a class="nav-link dropdown-toggle active" href="#" id="navbar_dropdown" data-toggle="dropdown">Katalog</a>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="{{ url_for('product', name='timpani') }}">Kotly</a>
-                      <a class="dropdown-item" href="#">Instrumenty sztabkowe</a>
-                      <a class="dropdown-item" href="#">Werble</a>
+                      <a class="dropdown-item" href="{{ url_for('product', name='keyboard') }}">Instrumenty sztabkowe</a>
+                      <a class="dropdown-item" href="{{ url_for('product', name='snare drum') }}">Werble</a>
                       <a class="dropdown-item" href="#">Bebny</a>
                     </div>
                   </li>
@@ -63,11 +63,46 @@
           </div>
         </div>
 
+        <div class="pt-lg-6 pb-lg-6 pt-5 pb-5">
+          <div class="container text-center">
+            <h2 class="text-uppercase">Skontaktuj sie z nami</h2>
+            <h4 class="text-uppercase">Dostaniesz znizke i nizszy koszt</h4>
+          </div>
+        </div>
 
+        <div id="join-container" class="pt-lg-6 pb-lg-6 pt-5 pb-5">
+          <div class="container text-sm-center">
+            <div class="row mt-sm-4 mt-md-0">
+              <div class="col-sm-12 col-md-8 text-center text-md-left" id="wyposazenie">
+                <h2 class="mb-4" id="instrument_name">I'm the main content</h2>
+                <p id="instrument_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            <div class="col-sm-12 col-md-4 text-center text-md-left">
+                <h3 class="mb-4">Secondary Menu</h3>
+
+                <ul class="nav flex-column nav-pills">
+                  <li class="nav-item">
+                    <a class="nav-link ajax-trigger" href="" id="timpani">Kotly</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Marimba</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Werble</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Sztabkowe</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- end for template "index.html" -->
         <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/tether.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     </body>
 </html>
