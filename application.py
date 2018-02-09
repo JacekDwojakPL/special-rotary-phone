@@ -1,6 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
+from flask_jsglue import JSGlue
 
 app=Flask(__name__)
+jsglue = JSGlue(app)
 
 
 @app.route("/")
@@ -18,3 +20,15 @@ def product(name):
                 {'name': 'majestic 7', 'opis': 'dupa7'},]
 
     return render_template("product.html", products=products)
+
+
+@app.route("/description", methods = ['POST'])
+def descritpion():
+
+    info = request.form.get('name')
+    opis = {
+        "title": "test title",
+        "opis": "test opis"
+    }
+
+    return jsonify(opis)
