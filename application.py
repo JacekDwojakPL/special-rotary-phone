@@ -22,10 +22,10 @@ def product(name):
     return render_template("product.html", products=products)
 
 
-@app.route("/description", methods = ['POST'])
-def descritpion():
+@app.route("/description")
+def description():
 
-    info = request.form.get('name')
+    info = request.args.get('name')
     opis = {
         "title": "test title",
         "opis": "test opis"

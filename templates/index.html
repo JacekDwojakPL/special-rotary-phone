@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
         <link rel="stylesheet" href="https://file.myfontastic.com/6iWEvEqzBQEjMABxNEDxFk/icons.css">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        {{ JSGlue.include() }}
     </head>
-
     <body>
       <!--start of template navbar -->
       <div id="hero">
@@ -74,11 +74,11 @@
           <div class="container text-sm-center">
             <div class="row mt-sm-4 mt-md-0">
               <div class="col-sm-12 col-md-8 text-center text-md-left" id="wyposazenie">
-                <h2 class="mb-4" id="instrument_name">I'm the main content</h2>
-                <p id="instrument_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h2 class="mb-4" id="instrument_name">Tu bedzie nazwa instrumentu</h2>
+                <p id="instrument_description">Tu bedzie opis</p>
               </div>
             <div class="col-sm-12 col-md-4 text-center text-md-left">
-                <h3 class="mb-4">Secondary Menu</h3>
+                <h3 class="mb-4">Katalog</h3>
 
                 <ul class="nav flex-column nav-pills">
                   <li class="nav-item">

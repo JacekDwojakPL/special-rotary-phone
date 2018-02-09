@@ -1,4 +1,11 @@
-$(".ajax-trigger").on('click', function (e) {
+$('.ajax-trigger').on('click', function (e) {
   e.preventDefault();
-  console.log($(this).attr('id'));
-})
+  var parameters = {
+    name: $(this).attr('id')
+  };
+
+  $.getJSON(Flask.url_for("description"), parameters)
+    .done(function(data, textStatus, jqXHR){
+      console.log(data['opis'])
+    });
+});
