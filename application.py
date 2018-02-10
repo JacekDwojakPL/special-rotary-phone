@@ -18,8 +18,6 @@ db = SQLAlchemy(app)
 
 @app.route("/")
 def index():
-    print(basedir)
-    print(database_dir)
     return render_template("index.html")
 
 @app.route("/instrument/<name>")
