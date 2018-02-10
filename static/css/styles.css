@@ -66,13 +66,15 @@ body {
   background: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0 60%; }
+  background-position: 0 60%;
+}
 
 #percussion-container {
   background: url("../img/background2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 60%;
+  color: white;
 }
 
 #keyboard-container {
@@ -80,6 +82,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 60%;
+  color: white; 
 }
 
 .back_to_top {

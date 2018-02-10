@@ -1,5 +1,5 @@
 $('.ajax-trigger').on('click', function (e) {
-  e.preventDefault();
+  //e.preventDefault();
   var parameters = {
     instrument_type: $(this).attr('id')
   };
