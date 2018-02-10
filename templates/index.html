@@ -26,7 +26,7 @@
                   <a class="nav-link dropdown-toggle active" href="#" id="navbar_dropdown" data-toggle="dropdown">Instrumenty</a>
                   <div class="dropdown-menu smooth-scroll">
                     <a class="dropdown-item" href="#instrumenty_perkusyjne">Perkusyjne</a>
-                    <a class="dropdown-item" href="#">Klawiszowe</a>
+                    <a class="dropdown-item" href="#instrumenty_klawiszowe">Klawiszowe</a>
                     <a class="dropdown-item" href="#">Pozostale</a>
                   </div>
                 </li>
@@ -39,26 +39,19 @@
                   <li class="nav-item">
                       <a class="nav-link active" href="#">Kontakt</a>
                   </li>
-                  <!--
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbar_dropdown" data-toggle="dropdown">Katalog</a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="{{ url_for('product', name='timpani') }}">Kotly</a>
-                      <a class="dropdown-item" href="{{ url_for('product', name='keyboard') }}">Instrumenty sztabkowe</a>
-                      <a class="dropdown-item" href="{{ url_for('product', name='snare drum') }}">Werble</a>
-                      <a class="dropdown-item" href="#">Bebny</a>
-                    </div>
-                  </li>
-                -->
                 </ul>
           </div>
         </nav>
         <!-- end of template navbar -->
         <!-- start for template "index.html" -->
-          <div class="row hero_content pt-lg-6 pb-lg-6 pt-5">
+          <div class="row hero_content pt-6 pb-6">
             <div class="col-md-6 col-sm-12">
               <h4 class="text-uppercase text-center text-md-left">Wypozyczalnia instrumentow i obsluga orkiestr symfonicznych</h4>
-              <p class="text-center text-md-left pt-5 pb-5">Symphonic Backline to obecnie jedyna, profesjonalna wypożyczalnia instrumentów orkiestrowych w Polsce. Dysponujemy zespołem wykwalifikowanych techników specjalizujących się w pełnej obsłudze instrumentów muzycznych, orkiestr kameralnych i symfonicznych, sprzętu scenicznego oraz koordynacji i obsługi sceny.</p>
+              <p class="text-center text-md-left pt-5 pb-5">
+                Symphonic Backline to obecnie jedyna, profesjonalna wypożyczalnia instrumentów orkiestrowych w Polsce.
+                Dysponujemy zespołem wykwalifikowanych techników specjalizujących się w pełnej obsłudze instrumentów muzycznych, orkiestr kameralnych i symfonicznych,
+                sprzętu scenicznego oraz koordynacji i obsługi sceny.
+              </p>
             </div>
           </div>
         </div>
@@ -66,7 +59,8 @@
     </div>
         <div class="feature_wrapper bg-primary pt-5 pb-5 mt-0">
           <div class="container">
-            <div class="row">
+            <div class="row pt-4 pb-4">
+              <!--
               <div class="col-md-1 col-sm-12 text-center mb-3 mb-md-0"><i class="icon-icon2 fa-3x"></i></div>
               <div class="col-md-3 col-sm-12 text-center text-uppercase text-md-left mb-3 mb-md-0">Nasi technicy wniosa wszystko</div>
 
@@ -75,42 +69,95 @@
 
               <div class="col-md-1 col-sm-12 text-center mt-lg-2 mb-3 mb-md-0"><i class="fas fa-sitemap fa-2x"></i></div>
               <div class="col-md-3 col-sm-12 text-center text-uppercase text-md-left mb-3 mb-md-0">Nasi technicy wniosa wszystko</div>
+          -->
             </div>
           </div>
         </div>
 
-        <div id="join-container" class="pt-6 pb-6">
+        <!-- start of percussion section -->
+        <div id="percussion-container" class="pt-6 pb-6">
           <div class="container text-sm-center">
             <div class="row mt-sm-4 mt-md-0" id="instrumenty_perkusyjne">
-              <div class="col-sm-12 col-md-6 order-2 order-md-1 text-center text-md-left pt-2 pt-md-0" id="description section">
+
+              <div class="col-sm-12 col-md-6 order-1 text-center text-md-left pt-2 pb-2 pb-md-0 pt-md-0" id="description section">
                 <h2 class="text-uppercase text-center text-md-left mb-4 mb-sm-1" id="instrument_name">Instrumenty perkusyjne</h2>
-                <p class="text-center text-md-left pt-4 pb-4 pt-md-4 pb-md-4" id="instrument_description">
+                <p class="text-center text-md-left pt-4 pb-4" id="instrument_description">
                   Od kotlow i bebnow, przez instrumenty sztabkowe, etniczne, latynoskie, az do blach i tarcz hamulcowych.
                   <br>Nasze zaplecze instrumentow perkusyjnych obejmuje wszystko
                   czego przebuje muzyk, aby w pelni zrealizowac wizje kompozytora i dyrygenta.
-                  <br><br>Wybierz kategorie i dowiedz sie wiecej.
+                </p>
+                <p>
+                  <a href="#" id="percussion_modal">Zobacz zdjecia</a>
                 </p>
               </div>
-            <div class="col-sm-12 col-md-6 order-1 order-md-2 text-center text-md-right" id="side_menu_section">
+
+            <div class="col-sm-12 col-md-6 order-2 text-center text-md-right" id="side_menu_section">
                 <h3 class="mb-3 mb-md-4">Oferta</h3>
                 <ul class="nav flex-column nav-pills pb-4 pb-md-0">
                   <li class="nav-item">
                     <a class="nav-link ajax-trigger pr-md-0" href="" id="timpani">Kotly</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link pr-md-0" href="#">Marimba</a>
+                    <a class="nav-link pr-md-0" href="#" id="drums">Bebny</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link pr-md-0" href="#">Werble</a>
+                    <a class="nav-link pr-md-0" href="#" id="cymbals">Talerze</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link pr-md-0" href="#">Sztabkowe</a>
+                    <a class="nav-link pr-md-0" href="#" id="mallets">Sztabkowe</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-md-0" href="#" id="etno">Etniczne</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-md-0" href="#" id="other">Pozostale</a>
                   </li>
                 </ul>
+                <small><a href="#" class="back_to_top">Do gory</a></small>
               </div>
+
             </div>
           </div>
         </div>
+        <!-- end of percussion section -->
+        <div class="feature_wrapper bg-primary pt-5 pb-5 mt-0">
+          <div class="row pt-4 pb-4">
+          </div>
+        </div>
+        <!-- start of keyboard section -->
+        <div id="keyboard-container" class="pt-6 pb-6">
+          <div class="container text-sm-center">
+            <div class="row mt-sm-4 mt-md-0" id="instrumenty_klawiszowe">
+
+              <div class="col-sm-12 col-md-6 order-1 text-center text-md-left pt-2 pt-md-0" id="description section">
+                <h2 class="text-uppercase text-center text-md-left mb-4 mb-sm-1" id="instrument_name">Instrumenty klawiszowe</h2>
+                <p class="text-center text-md-left pt-4 pb-4 pt-md-4 pb-md-4" id="instrument_description">
+                  Od kotlow i bebnow, przez instrumenty sztabkowe, etniczne, latynoskie, az do blach i tarcz hamulcowych.
+                  <br>Nasze zaplecze instrumentow perkusyjnych obejmuje wszystko
+                  czego przebuje muzyk, aby w pelni zrealizowac wizje kompozytora i dyrygenta.
+                </p>
+              </div>
+
+            <div class="col-sm-12 col-md-6 order-2 text-center text-md-right" id="side_menu_section">
+                <h3 class="mb-3 mb-md-4">Oferta</h3>
+                <ul class="nav flex-column nav-pills pb-4 pb-md-0">
+                  <li class="nav-item">
+                    <a class="nav-link ajax-trigger pr-md-0" href="" id="celesta">Celesta</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-md-0" href="#" id="grand_touch">YAMAHA Ground Touch</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link pr-md-0" href="#" id="other">Pozostale</a>
+                  </li>
+                </ul>
+                <small><a href="#" class="back_to_top">Do gory</a></small>
+            </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- end of keyboard section -->
         <!-- end for template "index.html" -->
         <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/tether.min.js') }}"></script>

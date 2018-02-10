@@ -68,11 +68,23 @@ body {
   background-size: cover;
   background-position: 0 60%; }
 
-#join-container {
+#percussion-container {
+  background: url("../img/background2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 60%;
+}
+
+#keyboard-container {
   background: url("../img/background3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 60%;
+}
+
+.back_to_top {
+  position: relative;
+  top: 25%;
 }
 
 .icon-drum-1 {
