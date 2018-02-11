@@ -82,8 +82,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 60%;
-  color: white; 
+  color: white;
 }
+
+@media (max-width: 34em) {
+  #keyboard-container {
+    background-position: 50% 60%;
+  }
+
+  #percussion-container {
+    background-position: 40% 60%;
+  }
+}
+
 
 .back_to_top {
   position: relative;
