@@ -4,63 +4,6 @@ body {
 .modal {
   color: black !important; }
 
-.product_div, .product_div .product_overlay {
-  width: 320px;
-  height: 320px;
-  display: inline-flex;
-  margin: 20px; }
-
-.product_div {
-  border-style: solid;
-  border-width: thin;
-  align-items: center;
-  justify-content: center; }
-  .product_div .product_overlay {
-    position: absolute;
-    margin: auto;
-    background-color: #120d08;
-    visibility: hidden; }
-  .product_div .product_thumbnail {
-    position: absolute;
-    visibility: visible; }
-
-.product_button {
-  position: absolute;
-  z-index: 1;
-  width: auto;
-  padding: 15px 45px;
-  background-color: #120D08;
-  color: #fff;
-  border-color: #F2E3CF;
-  border-width: 4px;
-  border-style: solid;
-  font-size: 0.9375em;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  cursor: pointer;
-  opacity: 1;
-  visibility: hidden; }
-
-@media (max-width: 919px) {
-  .product_button {
-    position: absolute;
-    visibility: visible; }
-  .product_overlay {
-    visibility: visible;
-    opacity: .75; } }
-
-@media (min-width: 920px) {
-  .product_div:hover .product_overlay {
-    visibility: visible;
-    opacity: .75; }
-  .product_div:hover .product_button {
-    transform: translateY(-50%);
-    transition: all 0.15s ease-in;
-    transition-property: all;
-    transition-duration: 0.15s;
-    transition-timing-function: ease-in;
-    transition-delay: 0s;
-    visibility: visible; } }
 
 #hero {
   background: url("../img/background.jpg");
