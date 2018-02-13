@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect,url_for
 from flask_jsglue import JSGlue
 from flask_sqlalchemy import SQLAlchemy
 from helpers import row_to_dict
@@ -20,18 +20,6 @@ db = SQLAlchemy(app)
 def index():
     return render_template("index.html")
 
-@app.route("/instrument/<name>")
-def product(name):
-    products = [{'name': 'majestic 1', 'opis': 'dupa1'},
-                {'name': 'majestic 2', 'opis': 'dupa2'},
-                {'name': 'majestic 3', 'opis': 'dupa3'},
-                {'name': 'majestic 4', 'opis': 'dupa4'},
-                {'name': 'majestic 5', 'opis': 'dupa5'},
-                {'name': 'majestic 6', 'opis': 'dupa6'},
-                {'name': 'majestic 7', 'opis': 'dupa7'},]
-
-    return render_template("product.html", products=products)
-
 
 @app.route("/description")
 def description():
@@ -42,7 +30,25 @@ def description():
 
     return jsonify(opis)
 
+@app.route("/add", methods=['GET', 'POST'])
+def add():
 
+    if request.method == 'GET':
+        query = Instrument_description.query.all()
+
+        return render_template("add.html", rows=query)
+
+    elif request.method == 'POST':
+
+        instrument_type = request.form.get('instrument_type')
+        instrument_name = request.form.get('instrument_name')
+        instrument_opis = request.form.get('instrument_opis')
+
+        new_instrument = Instrument_description(instrument_type=instrument_type, name=instrument_name, opis=instrument_opis)
+        db.session.add(new_instrument)
+        db.session.commit()
+
+        return redirect(url_for('add'))
 
 class Instrument_description(db.Model):
     __tablename__ = 'instrument_description'
