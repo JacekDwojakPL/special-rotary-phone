@@ -26,9 +26,17 @@ def description():
 
     instrument_type = request.args.get('instrument_type')
     query = Instrument_description.query.filter_by(instrument_type=instrument_type).first()
-    opis =  row_to_dict(query)
+
+    if query is None:
+        opis = {
+                "name" : "nie ma tego instrumentu",
+                "opis" : "nie ma takiego opisu"
+                }
+    else:
+        opis =  row_to_dict(query)
 
     return jsonify(opis)
+
 
 @app.route("/add", methods=['GET', 'POST'])
 def add():
@@ -49,6 +57,19 @@ def add():
         db.session.commit()
 
         return redirect(url_for('add'))
+
+
+@app.route("/remove", methods=['POST'])
+def remove():
+    instrument_type = request.form.get("remove")
+    to_delete = Instrument_description.query.filter_by(instrument_type=instrument_type).first()
+
+    db.session.delete(to_delete)
+    db.session.commit()
+
+    return redirect(url_for('add'))
+
+
 
 class Instrument_description(db.Model):
     __tablename__ = 'instrument_description'

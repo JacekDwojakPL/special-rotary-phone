@@ -38,14 +38,10 @@ body {
   }
 }
 
-
 .back_to_top {
   position: relative;
   top: 10%;
 }
-
-.icon-drum-1 {
-  top: -10px; }
 
 .feature_wrapper {
   color: #000; }

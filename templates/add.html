@@ -10,50 +10,63 @@
         {{ JSGlue.include() }}
         <title>Symphonic Backline</title>
     </head>
-    <div class="container pt-6">
-      <table class="table pb-6">
-        <thead>
-          <tr>
-            <th>Nazwa</th>
-            <th>Rodzaj</th>
-            <th>Opis</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for row in rows %}
-          <tr>
-            <td>{{row.name}}</td>
-            <td>{{row.instrument_type}}</td>
-            <td>{{row.opis}}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-
-      <form action="{{ url_for('add') }}" method="post">
-        <div class="form-group col-4">
-          <input class = "form-control" type="text" name="instrument_name" placeholder="nazwa instrumentu">
-        </div>
-        <div class="form-group col-4">
-          <textarea class="form-control"name="instrument_opis" placeholder="opis instrumentu" rows="3"></textarea>
-        </div>
-        <div class="form-group col-4">
-          <select multiple class="form-control" name="instrument_type">
-            <option value="timpani">Timpani</option>
-            <option value="drums">Werble i bebny</option>
-            <option value="cymbals">Talerze</option>
-            <option value="percussion_other">Pozostale perkusyjne</option>
-            <option value="etno">Etniczne</option>
-            <option value="mallets">Sztabkowe</option>
-            <option value="celesta">Celesta</option>
-            <option value="grand_touch">Grand touch</option>
-            <option value="keyboard_other">Pozostale klawiszowe</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-secondary">Wyslij</button>
-      </form>
-    </div>
     <body>
+    <div class="container pt-3 text-center">
+      <h2 class="pt-3 pb-3">Admin</h2>
+      <form action="{{ url_for('remove') }}" method="post">
+        <table class="table pb-6">
+          <thead>
+            <tr>
+              <th>Nazwa</th>
+              <th>Rodzaj</th>
+              <th>Opis</th>
+              <th>Zaznacz</th>
+              <th>Usun</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in rows %}
+            <tr>
+              <td>{{row.name}}</td>
+              <td>{{row.instrument_type}}</td>
+              <td>{{row.opis}}</td>
+              <td><input type="checkbox" value="{{row.instrument_type}}" name="remove"></td>
+              <td><button type="submit" class="btn btn-secondary">Usun</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </form>
+
+      <div class="container pt-6">
+        <form action="{{ url_for('add') }}" method="post">
+          <div class="form-group col-12">
+            <input class = "form-control" type="text" name="instrument_name" placeholder="nazwa instrumentu">
+          </div>
+          <div class="form-group col-12">
+            <textarea class="form-control"name="instrument_opis" placeholder="opis instrumentu" rows="3"></textarea>
+          </div>
+          <div class="form-group col-12">
+            <select multiple class="form-control" name="instrument_type">
+              <option value="timpani">Timpani</option>
+              <option value="drums">Werble i bebny</option>
+              <option value="cymbals">Talerze</option>
+              <option value="percussion_other">Pozostale perkusyjne</option>
+              <option value="etno">Etniczne</option>
+              <option value="mallets">Sztabkowe</option>
+              <option value="celesta">Celesta</option>
+              <option value="grand_touch">Grand touch</option>
+              <option value="keyboard_other">Pozostale klawiszowe</option>
+            </select>
+          </div>
+          <div class="row justify-content-end">
+            <button type="submit" class="btn btn-secondary">Wyslij</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
       <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/tether.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
