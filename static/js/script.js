@@ -1,5 +1,4 @@
-$('.ajax-trigger').on('click', function (e) {
-  //e.preventDefault();
+$('.ajax-trigger').on('click', function () {
   var parameters = {
     instrument_type: $(this).attr('id')
   };
@@ -21,4 +20,13 @@ $('.ajax-trigger').on('click', function (e) {
     });
 
   });
+});
+
+$(".feature_wrapper").click(function(){
+
+      var element_offset = $(this).next().filter('.target').offset();
+
+      $('html, body').animate({
+        scrollTop: element_offset.top
+      });
 });
