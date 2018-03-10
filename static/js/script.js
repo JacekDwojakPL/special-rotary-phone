@@ -1,56 +1,42 @@
-$('.ajax-trigger-percussion').on('click', function () {
-  var parameters = {
-    instrument_type: $(this).attr('id')
-  };
+// page slide animation
+var page_slide = document.querySelectorAll(".page_slide");
 
-  $.getJSON(Flask.url_for("description"), parameters)
-    .done(function(data, textStatus, jqXHR){
+page_slide.forEach(function(element) {
+  element.addEventListener("click", function() {
 
-    $("#percussion_instrument_name").fadeOut(50, function() {
+    $('html, body').animate({
+      scrollTop: $(this.dataset.slide).offset().top
+    }); // end of animate
+  }); // end of click listener
+});// end of forEach
 
-      $("#percussion_instrument_name").html(data['name']);
-      $("#percussion_instrument_name").fadeIn();
 
-    });
+// getting instrument descriptions using AJAX
+var get_description = document.querySelectorAll(".ajax-trigger");
 
-    $("#percussion_instrument_description").fadeOut(50, function () {
+get_description.forEach(function(element) {
 
-      $("#percussion_instrument_description").html(data['opis']);
-      $("#percussion_instrument_description").fadeIn();
-    });
+  element.addEventListener("click", function () {
 
-  });
-});
+    var name = this.dataset.name;
+    var opis = this.dataset.opis;
+    var parameters = {
+      instrument_type: this.id
+    };
 
-$('.ajax-trigger-keyboard').on('click', function () {
-  var parameters = {
-    instrument_type: $(this).attr('id')
-  };
+    $.getJSON(Flask.url_for("description"), parameters)
+    .done(function(data, textStatus, jqXHR) {
 
-  $.getJSON(Flask.url_for("description"), parameters)
-    .done(function(data, textStatus, jqXHR){
+      $(name).fadeOut(50, function() {
+        $(name).html(data['name']);
+        $(name).fadeIn();
+      }); // end of name fadeOut
 
-    $("#keyboard_instrument_name").fadeOut(50, function() {
+      $(opis).fadeOut(50, function() {
+        $(opis).html(data['name']);
+        $(opis).fadeIn();
+      }); // end of opis fadeOut
 
-      $("#keyboard_instrument_name").html(data['name']);
-      $("#keyboard_instrument_name").fadeIn();
-
-    });
-
-    $("#keyboard_instrument_description").fadeOut(50, function () {
-
-      $("#keyboard_instrument_description").html(data['opis']);
-      $("#keyboard_instrument_description").fadeIn();
-    });
-
-  });
-});
-
-$(".feature_wrapper").click(function(){
-
-      var element_offset = $(this).next().filter('.target').offset();
-
-      $('html, body').animate({
-        scrollTop: element_offset.top
-      });
-});
+    }); // end of getJSON
+  }); // end of click event
+});// end of forEach

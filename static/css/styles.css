@@ -43,6 +43,11 @@ body {
   top: 10%;
 }
 
+.back_to_top:hover {
+  cursor: pointer;
+  color: #e2c093;
+}
+
 .feature_wrapper {
   color: #000; }
 
