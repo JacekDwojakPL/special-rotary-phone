@@ -33,7 +33,7 @@ get_description.forEach(function(element) {
       }); // end of name fadeOut
 
       $(opis).fadeOut(50, function() {
-        $(opis).html(data['name']);
+        $(opis).html(data['opis']);
         $(opis).fadeIn();
       }); // end of opis fadeOut
 
