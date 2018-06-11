@@ -33,10 +33,19 @@ def description():
                 "opis" : "nie ma takiego opisu"
                 }
     else:
-        opis =  row_to_dict(query)
+        opis = row_to_dict(query)
 
     return jsonify(opis)
 
+
+@app.route("/language")
+def language():
+    table = request.args.get("version")
+    type = request.args.get("type")
+    query = "SELECT content FROM " + table + " WHERE type = \"" + type + "\";"
+    response = db.session.execute(query).fetchall()
+    rows = [dict(row) for row in response]
+    return jsonify(rows)
 
 @app.route("/add", methods=['GET', 'POST'])
 def add():
