@@ -18,6 +18,10 @@
         change_elements("keyboard_link", this.dataset.version)
         change_elements("keyboard_header", this.dataset.version)
         change_elements("keyboard_instrument_description", this.dataset.version)
+        //translate backline section elements
+        change_elements("backline_link", this.dataset.version)
+        change_elements("backline_header", this.dataset.version)
+        change_elements("backline_instrument_description", this.dataset.version)
         //translate contact section elements
         change_elements("contact_link", this.dataset.version)
         change_elements("contact_header", this.dataset.version)
@@ -40,6 +44,10 @@
         change_elements("keyboard_link", this.dataset.version)
         change_elements("keyboard_header", this.dataset.version)
         change_elements("keyboard_instrument_description", this.dataset.version)
+        //translate backline section elements
+        change_elements("backline_link", this.dataset.version)
+        change_elements("backline_header", this.dataset.version)
+        change_elements("backline_instrument_description", this.dataset.version)
         //translate contact section elements
         change_elements("contact_link", this.dataset.version)
         change_elements("contact_header", this.dataset.version)
@@ -76,19 +84,19 @@ get_description.forEach(function(element) {
     var name = this.dataset.name;
     var opis = this.dataset.opis;
     var parameters = {
-      instrument_type: this.id
+      instrument_type: this.id,
+      language: document.querySelector(".language_version").dataset.version == "english" ? "polish" : "english"
     };
 
     $.getJSON(Flask.url_for("description"), parameters)
     .done(function(data, textStatus, jqXHR) {
-
       $(name).fadeOut(50, function() {
-        $(name).html(data['name']);
+        $(name).html(data[0]['name']);
         $(name).fadeIn();
       }); // end of name fadeOut
 
       $(opis).fadeOut(50, function() {
-        $(opis).html(data['opis']);
+        $(opis).html(data[0]['description']);
         $(opis).fadeIn();
       }); // end of opis fadeOut
 

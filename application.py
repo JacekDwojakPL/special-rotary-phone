@@ -25,7 +25,8 @@ def index():
 def description():
 
     instrument_type = request.args.get('instrument_type')
-    query = Instrument_description.query.filter_by(instrument_type=instrument_type).first()
+    language = request.args.get('language')
+    query = "SELECT name, description FROM instruments WHERE type = \"" + instrument_type + "\" AND language = \"" + language +"\""
 
     if query is None:
         opis = {
@@ -33,9 +34,10 @@ def description():
                 "opis" : "nie ma takiego opisu"
                 }
     else:
-        opis = row_to_dict(query)
+        response = db.session.execute(query).fetchall()
+        rows = [dict(row) for row in response]
 
-    return jsonify(opis)
+    return jsonify(rows)
 
 
 @app.route("/language")

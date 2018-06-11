@@ -22,24 +22,24 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle active navigation" href="#" id="navbar_dropdown" data-toggle="dropdown" data-type="navigation">Instrumenty</a>
+                  <a class="nav-link dropdown-toggle active navigation" href="#" id="navbar_dropdown" data-toggle="dropdown">Instrumenty</a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item page_slide navigation" href="#percussion-container" data-slide="#percussion-container" data-type="navigation">Perkusyjne</a>
-                    <a class="dropdown-item page_slide navigation" href="#keyboard-container" data-slide="#keyboard-container" data-type="nagivation">Klawiszowe</a>
+                    <a class="dropdown-item page_slide navigation" href="#percussion-container" data-slide="#percussion-container">Perkusyjne</a>
+                    <a class="dropdown-item page_slide navigation" href="#keyboard-container" data-slide="#keyboard-container">Klawiszowe</a>
                     <a class="dropdown-item navigation" href="#" data-type="navigation">Pozostale</a>
                   </div>
                 </li>
                   <li class="nav-item">
-                      <a class="nav-link active navigation" href="#" data-type="navigation">Wyposazenie orkiestrowe</a>
+                      <a class="nav-link active page_slide navigation" href="#backline-container" data-slide="#backline-container">Wyposazenie orkiestrowe</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link active navigation" href="#" data-type="navigation">Galeria</a>
+                      <a class="nav-link active navigation" href="#">Galeria</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link active page_slide navigation" href="#contact-container" data-slide="#contact-container" data-type="navigation">Kontakt</a>
+                      <a class="nav-link active page_slide navigation" href="#contact-container" data-slide="#contact-container">Kontakt</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link active language_version" href="" data-version="english" data-type="navigation">English</a>
+                      <a class="nav-link active language_version" href="" data-version="english">English</a>
                   </li>
                 </ul>
           </div>
@@ -62,6 +62,7 @@
     <!-- landing section end -->
       {% include "percussion_section.html" %}
       {% include "keyboard_section.html" %}
+      {% include "backline_section.html" %}
       {% include "contact_section.html" %}
       <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/tether.min.js') }}"></script>

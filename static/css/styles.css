@@ -6,14 +6,14 @@ body {
 
 
 #hero {
-  background: url("../img/background.jpg");
+  background: url("../img/background/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 60%;
 }
 
 #percussion-container {
-  background: url("../img/background2.jpg");
+  background: url("../img/background/background2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 60%;
@@ -21,7 +21,15 @@ body {
 }
 
 #keyboard-container {
-  background: url("../img/background3.jpg");
+  background: url("../img/background/background3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 60%;
+  color: white;
+}
+
+#backline-container {
+  background: url("../img/background/background4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 60%;
@@ -35,6 +43,10 @@ body {
 
   #percussion-container {
     background-position: 40% 60%;
+  }
+
+  #backline-container {
+    background-position: 50% 60%;
   }
 }
 
@@ -3674,7 +3686,7 @@ tbody.collapse.show {
 
 button.close {
   padding: 0;
-  background-color: transparent;
+  background-color: ;
   border: 0;
   -webkit-appearance: none; }
 
@@ -3717,7 +3729,7 @@ button.close {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #fff;
+  background-color: #F2E3CF;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
@@ -3786,7 +3798,7 @@ button.close {
 
 @media (min-width: 992px) {
   .modal-lg {
-    max-width: 800px; } }
+    max-width: 700px; } }
 
 .tooltip {
   position: absolute;
@@ -4078,8 +4090,8 @@ button.close {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   background: transparent no-repeat center center;
   background-size: 100% 100%; }
 
