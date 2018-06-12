@@ -64,22 +64,23 @@
 // page slide animation
 var page_slide = document.querySelectorAll(".page_slide");
 
-page_slide.forEach(function(element) {
-  element.addEventListener("click", function() {
+for(var i = 0; i < page_slide.length; i++) {
+  page_slide[i].addEventListener("click", function() {
 
     $('html, body').animate({
       scrollTop: $(this.dataset.slide).offset().top
     }); // end of animate
   }); // end of click listener
-});// end of forEach
+};// end of forEach
 
 
 // getting instrument descriptions using AJAX
 var get_description = document.querySelectorAll(".ajax-trigger");
 
-get_description.forEach(function(element) {
+//get_description.forEach(function(element) {
+  for(var i = 0; i < get_description.length; i++) {
 
-  element.addEventListener("click", function () {
+  get_description[i].addEventListener("click", function () {
 
     var name = this.dataset.name;
     var opis = this.dataset.opis;
@@ -102,7 +103,7 @@ get_description.forEach(function(element) {
 
     }); // end of getJSON
   }); // end of click event
-});// end of forEach
+};// end of forEach
 
 function change_elements(element, version) {
 
